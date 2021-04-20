@@ -23,7 +23,7 @@ def game_core_v3(number):
 
     while number != predict:
         count += 1
-        if step > 4:  # если число меньше 4 нет смысла его делить
+        if step > 4:  # если шаг больше 4 мы делим его на 2
             if predict > number:  # если предположение больше мы шагаем назад
                 predict -= step
                 step //= 2  # Делим шаг на 2
@@ -31,8 +31,8 @@ def game_core_v3(number):
                 predict += step  # если педположение меньше мы шагаем вперед
                 step //= 2
         else:
-            if predict > number:  # Здесь до числа остается меньше 4-х чисел
-                predict -= 1  # Мы проходим до этого числа с шагом 1
+            if predict > number:  # Здесь шаг меньше 4, поэтому мы проходим до числа с шагом 1
+                predict -= 1  
             else:
                 predict += 1
     return count
